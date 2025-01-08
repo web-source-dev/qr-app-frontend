@@ -15,6 +15,16 @@ const Sidebar = () => {
     if (!user_id) {
       navigate('/user/login')
     }
+        setTimeout(() => {
+      localStorage.removeItem('businessdatasending')
+      localStorage.removeItem('configuration')
+      localStorage.removeItem('customization')
+      localStorage.removeItem('qrDesign')
+      const remove = localStorage.getItem('requestBusinessEdit')
+      if(remove){
+        localStorage.removeItem('requestBusinessEdit')
+      }
+    }, 2000); // 2 sec in milliseconds
   },[])
 
   const menuItems = [
