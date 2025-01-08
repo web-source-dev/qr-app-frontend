@@ -1,0 +1,183 @@
+.wifi-container{
+    width: 71%;
+    padding: 20px;
+}
+.wifi-container h1{
+    font-weight: 700;
+    font-size: 34px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.flex-group{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.wifi-form {
+width: 100%;
+border-bottom: 2px solid #6c18ff;
+padding-bottom: 40px;
+}
+
+/* Flex layout */
+.flex-input {
+display: flex;
+width: 100%;
+gap: 40px;
+}
+
+/* Form group styling */
+.form-group {
+display: flex;
+flex-direction: column;
+gap: 8px;
+position: relative;
+width: 100%;
+}
+
+label {
+font-size: 14px;
+color: #333;
+}
+
+input[type="text"], select {
+padding: 6px;
+font-size: 16px;
+border: 1px solid #ccc;
+border-radius: 4px;
+width: 100%;
+box-sizing: border-box;
+}
+textarea{
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+input[type="checkbox"] {
+align-self: flex-start;
+}
+
+input[type="text"]:focus, select:focus {
+border-color: #6c18ff;
+outline: none;
+}
+
+/* Additional styling for inputs when empty */
+input[type="text"]:placeholder-shown {
+color: #aaa;
+}
+
+/* Hover effect for select */
+select:hover {
+border-color: #888;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+.wifi-form {
+    padding: 15px;
+}
+
+.flex-input {
+    flex-direction: column;
+}
+
+.form-group {
+    width: 100%;
+}
+}
+.form-label {
+font-size: 14px;
+color: #333;
+font-weight: 600;
+}
+
+/* Custom toggle switch design */
+.toggle-switch {
+display: flex;
+align-items: center;
+margin-left: -20px;
+}
+
+.toggle-checkbox {
+display: none; /* Hide the default checkbox */
+}
+
+.toggle-label {
+position: relative;
+display: inline-block;
+margin-top: 15px;
+width: 50px;
+height: 30px;
+background-color: #ccc;
+border-radius: 30px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.toggle-inner {
+position: absolute;
+top: 50%;
+left: 4px;
+transform: translateY(-50%);
+width: 40px;
+height: 20px;
+background-color: #fff;
+border-radius: 50px;
+transition: transform 0.3s ease;
+}
+
+.toggle-switch-btn {
+position: absolute;
+top: 50%;
+left: 2px;
+width: 26px;
+height: 26px;
+background-color: #fff;
+border-radius: 50%;
+transition: left 0.3s ease;
+transform: translateY(-50%);
+}
+
+/* When checkbox is checked (toggle active state) */
+.toggle-checkbox:checked + .toggle-label {
+background-color: #6c18ff; /* Active color */
+}
+
+.toggle-checkbox:checked + .toggle-label .toggle-switch-btn {
+left: 22px; /* Move button to the right */
+}
+
+/* Focus state for better accessibility */
+.toggle-checkbox:focus + .toggle-label {
+box-shadow: 0 0 0 3px rgba(72, 148, 226, 0.4);
+}
+
+/* Additional styling for smaller screens */
+@media (max-width: 768px) {
+.form-group {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.form-label {
+    font-size: 16px;
+}
+}
+.display-mobile{
+width: 25%;
+height: 500px;
+padding: 15px;
+border: 2px solid #6c18ff;
+border-radius: 20px;
+position: sticky;
+top: 10%;
+}

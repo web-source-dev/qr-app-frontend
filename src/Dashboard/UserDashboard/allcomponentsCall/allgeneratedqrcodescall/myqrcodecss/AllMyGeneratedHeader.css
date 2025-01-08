@@ -1,0 +1,158 @@
+/* Global styles */
+.container {
+    font-family: 'Arial', sans-serif;
+    color: black;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    background-color: white;
+  }
+  /* Data container styles */
+  .data-container {
+    padding: 20px;
+    border-radius: 10px;
+    width: 100%;
+    background-color: white;
+    transition: transform 0.3s ease;
+  }
+  .button.active {
+    background-color: #000000; /* You can change this to any color */
+    color: white;
+    font-weight: bold;
+    
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: Marvel;
+  font-size: 10pt;
+  padding: 5px 10px;
+  }
+  /* Header section */
+.header-of-mr-qr-codes {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  border-left:1px solid #6c18ff;
+  border-right:1px solid #6c18ff;
+  border-top:1px solid #6c18ff;
+  gap: 10px;
+  padding: 0 15px;
+}
+
+.data-type-dropdown {
+  position: relative;
+}
+
+.dropdown-button {
+  border: transparent;
+  border-right:5px solid #6c18ff;
+  background-color: transparent;
+  padding: 20px ;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: Marvel;
+  font-size: 10pt;
+}
+
+.arrow {
+  color: #6c18ff;
+  margin-left: 10px;
+  transition: transform 0.3s ease;
+}
+
+.arrow.open {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background-color: #000000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  border-radius: 8px;
+  z-index: 1;
+}
+
+.dropdown-item {
+  padding: 12px 20px;
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+}
+
+.dropdown-item.active {
+  background-color: #6c18ff;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  flex-grow: 1;
+  overflow-x: auto;
+}
+
+.navbar-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  
+}
+
+.navbar-item {
+  margin: 10px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  background: transparent;
+  padding: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: Marvel;
+  border-radius: 5px;
+  font-size: 10pt;
+  transition-duration: 1s;
+}
+
+.navbar-item:hover {
+  background-color: #6c18ff;
+  color: #fff;
+}
+
+.navbar-item.active {
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #6c18ff;
+}
+
+/* Custom scrollbar styles for better visibility */
+.navbar::-webkit-scrollbar {
+  height: 4px; /* Make the scrollbar more visible */
+}
+
+.navbar::-webkit-scrollbar-thumb {
+  background-color: #6c18ff; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+  width: 100px;
+}
+
+.navbar::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Track color */
+
+}

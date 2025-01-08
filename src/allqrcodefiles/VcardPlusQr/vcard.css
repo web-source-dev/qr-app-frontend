@@ -1,0 +1,206 @@
+/* General Styles */
+.theme1-vcard-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .theme1-vcard-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .theme1-vcard-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .theme1-vcard-title {
+    font-size: 18px;
+    color: var(--text-color);
+  }
+  
+  .theme1-vcard-contact,
+  .theme1-vcard-email {
+    font-size: 16px;
+    margin: 5px 0;
+  }
+  
+  .theme1-vcard-contact strong,
+  .theme1-vcard-email strong {
+    font-weight: bold;
+  }
+  
+  .theme1-vcard-business,
+  .theme1-vcard-social,
+  .theme1-vcard-images,
+  .theme1-vcard-note,
+  .theme1-vcard-website,
+  .theme1-vcard-company {
+    margin-bottom: 20px;
+  }
+  
+  .theme1-vcard-social a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  .theme1-vcard-social a:hover {
+    text-decoration: underline;
+  }
+  
+  .theme1-vcard-images {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .theme1-vcard-image-gallery {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .theme1-vcard-note {
+    font-size: 16px;
+  }
+  
+  .theme1-vcard-website a {
+    color: var(--primary-color);
+    text-decoration: none;
+  }
+  
+  .theme1-vcard-website a:hover {
+    text-decoration: underline;
+  }
+  
+  .theme1-company-category {
+    margin-bottom: 15px;
+  }
+  
+  .theme1-company-category h4 {
+    font-size: 18px;
+    color: var(--title-color);
+  }
+  
+  .theme1-company-category ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  .theme1-company-category li {
+    font-size: 16px;
+    color: var(--text-color);
+  }
+  
+  /* Theme-based Colors */
+  .theme1-vcard-name,
+  .theme1-vcard-title,
+  .theme1-vcard-contact,
+  .theme1-vcard-email,
+  .theme1-vcard-business,
+  .theme1-vcard-social,
+  .theme1-vcard-note,
+  .theme1-vcard-website,
+  .theme1-vcard-company {
+    color: var(--text-color);
+  }
+  
+  .theme1-vcard-header,
+  .theme1-vcard-social,
+  .theme1-vcard-images,
+  .theme1-vcard-note,
+  .theme1-vcard-website,
+  .theme1-vcard-company {
+    background-color: var(--secondary-color);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .theme1-vcard-website,
+  .theme1-company-category a {
+    color: var(--primary-color);
+  }
+  
+  /* Button Styling */
+  .theme1-vcard-btn {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    border: none;
+  }
+  
+  .theme1-vcard-btn:hover {
+    background-color: var(--button-text-color);
+    color: var(--button-color);
+  }
+  
+  /* Font Styles */
+  .theme1-vcard-name,
+  .theme1-vcard-title,
+  .theme1-vcard-contact,
+  .theme1-vcard-email,
+  .theme1-vcard-social {
+    font-family: var(--font-family), sans-serif;
+  }
+  
+  /* Utility Classes */
+  .theme1-vcard-header,
+  .theme1-vcard-business,
+  .theme1-vcard-social,
+  .theme1-vcard-images,
+  .theme1-vcard-note,
+  .theme1-vcard-website,
+  .theme1-vcard-company {
+    padding: 15px;
+  }
+  
+  .theme1-company-category ul {
+    padding-left: 20px;
+  }
+  
+  .theme1-company-category li {
+    font-size: 14px;
+  }
+  
+  /* Responsive Styling for Mobile Devices */
+  @media (max-width: 600px) {
+    .theme1-vcard-header {
+      align-items: flex-start;
+    }
+  
+    .theme1-vcard-name {
+      font-size: 20px;
+    }
+  
+    .theme1-vcard-title,
+    .theme1-vcard-contact,
+    .theme1-vcard-email,
+    .theme1-vcard-note,
+    .theme1-vcard-website {
+      font-size: 14px;
+    }
+  
+    .theme1-vcard-image {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .theme1-vcard-images {
+      flex-direction: column;
+    }
+  
+    .theme1-vcard-image-gallery {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  

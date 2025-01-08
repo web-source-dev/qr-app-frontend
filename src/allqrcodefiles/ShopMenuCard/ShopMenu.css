@@ -1,0 +1,229 @@
+/* General Container */
+.shop-menu-basic-info-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Input Item (Label and Input/Textarea) */
+.shop-menu-basic-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.shop-menu-basic-info-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.shop-menu-basic-info-input,
+.shop-menu-basic-info-textarea {
+  font-size: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #000000;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+}
+
+.shop-menu-basic-info-input:focus,
+.shop-menu-basic-info-textarea:focus {
+  border-color: #000000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  outline: none;
+}
+
+.shop-menu-basic-info-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.shop-menu-basic-info-logo-container {
+  margin-top: 15px;
+}
+
+.shop-menu-basic-info-logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  border: 2px solid #000000;
+  object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .shop-menu-basic-info-container {
+    padding: 20px;
+  }
+
+  .shop-menu-basic-info-input,
+  .shop-menu-basic-info-textarea {
+    font-size: 14px;
+  }
+}
+
+/* General Layout and Container */
+.category-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Add Category Section */
+.add-category-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.add-category-label {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-category-btn {
+  background-color: #000000;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.add-category-btn:hover {
+  background-color: #141414;
+}
+
+/* Category Section */
+.category-section {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.185);
+}
+
+.category-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.category-header-input {
+  display: flex;
+  align-items: center;
+}
+
+.remove-category-btn {
+  background-color: #ff4d4d;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-category-btn:hover {
+  background-color: #e04444;
+}
+
+input[type="text"], input[type="number"], input[type="file"] {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+input[type="file"] {
+  width: auto;
+  display: inline-block;
+}
+
+.product-list {
+  margin-top: 20px;
+}
+
+.product-item {
+  background-color: #f2f2f2;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+.product-image-group{
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+.product-image-group input[type="file"]{
+  width: 100%;
+}
+.product-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+}
+
+.product-input-group-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-input-group-wrapper input[type="text"] {
+  flex: 1;
+}
+
+.remove-product-btn {
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 5px 8px;
+  margin-left: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.remove-product-btn:hover {
+  background-color: #e04444;
+}
+
+.add-product-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.add-product-label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.add-product-btn {
+  background-color: #000000;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.add-product-btn:hover {
+  background-color: #1b1b1b;
+}
+

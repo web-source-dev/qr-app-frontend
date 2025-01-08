@@ -1,0 +1,523 @@
+:root {
+  --title-color: #222;
+  --text-color: #333;
+  --primary-color: #f9f9f9;
+  --secondary-color: #0073e6;
+  --button-color: #005bb5;
+  --button-hover-color: #004494;
+  --button-text-color: #fff;
+  --icons-color: #0073e6;
+  --font-family: 'Roboto', Arial, sans-serif;
+  --border-color: #ddd;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+.mobile-image-container-we{
+    max-height: 999vh;
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+.theme3-social-profile {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.theme3-social-profile:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px var(--shadow-color);
+}
+
+.theme3-social-profile__header {
+  color: var(--title-color);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.theme3-social-profile__networks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.theme3-social-profile__network {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: var(--secondary-color);
+  box-shadow: 0 2px 4px var(--shadow-color);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.theme3-social-profile__network:hover {
+  background-color: var(--secondary-color);
+  transform: translateX(10px);
+}
+
+.theme3-social-profile__icons {
+  font-size: 2rem;
+  color: var(--icons-color);
+  margin-right: 12px;
+  transition: color 0.3s ease;
+}
+
+.theme3-social-profile__network:hover .theme3-social-profile__icons {
+  color: var(--icons-color);
+}
+
+.theme3-social-profile__network-link {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.theme3-social-profile__network:hover .theme3-social-profile__network-link {
+  color: var(--primary-color);
+}
+
+.theme3-social-profile__button {
+  display: inline-block;
+  background-color: var(--button-color);
+  color: var(--button-text-color);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.theme3-social-profile__button:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-3px);
+  color: var(--button-color);
+}
+
+@media (max-width: 768px) {
+  .theme3-social-profile {
+    padding: 15px;
+  }
+
+  .theme3-social-profile__header {
+    font-size: 1.5rem;
+  }
+
+  .theme3-social-profile__network-link {
+    font-size: 0.9rem;
+  }
+
+  .theme3-social-profile__button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+/* Base Style */
+.theme1-social-profile {
+    font-family: var(--font-family);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 25px;
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: none; /* No shadow for clean look */
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .theme1-social-profile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header */
+  .theme1-social-profile__header {
+    color: var(--title-color);
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--border-color);
+  }
+  
+  /* Networks Section */
+  .theme1-social-profile__networks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .theme1-social-profile__network {
+    display: flex;
+    align-items: center;
+    padding: 3px 0;
+    margin-bottom: 10px; /* Adds space between items */
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border-bottom: 2px solid var(--border-color); /* Only a bottom border */
+  }
+  
+  .theme1-social-profile__network:hover {
+    background-color: var(--hover-secondary-color);
+    transform: scale(1.05);
+  }
+  
+  /* Icons - Circle Background */
+  .theme1-social-profile__icons {
+    font-size: 1.5rem;
+    color: var(--icons-color);
+    margin-right: 15px;
+    padding: 5px; /* Adds padding for the circular background */
+    border-radius: 50%; /* Makes the background circular */
+    background-color: var(--secondary-color); /* Circle background color */
+    transition: color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .theme1-social-profile__network:hover .theme1-social-profile__icons {
+    background-color: var(--icons-color); /* Darker background color on hover */
+    color: var(--secondary-color); /* Change icon color on hover */
+  }
+  
+  /* Network Link */
+  .theme1-social-profile__network-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  /* Button */
+  .theme1-social-profile__button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 14px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  .theme1-social-profile__button:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+    color: var(--button-color);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .theme1-social-profile {
+      padding: 20px;
+    }
+  
+    .theme1-social-profile__header {
+      font-size: 1.6rem;
+    }
+  
+    .theme1-social-profile__network-link {
+      font-size: 1rem;
+    }
+  
+    .theme1-social-profile__button {
+      font-size: 1rem;
+      padding: 12px 25px;
+    }
+  
+    .theme1-social-profile__networks {
+      gap: 18px;
+    }
+  
+    .theme1-social-profile__network {
+      padding: 12px;
+    }
+  }
+/* Theme2 Base Style */
+.theme2-social-profile {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-color);
+    padding: 10px;
+    width: 90%;
+    max-width: 600px;
+    margin: 10px auto;
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .theme2-social-profile:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Header */
+  .theme2-social-profile__header {
+    color: var(--title-color);
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 4px dashed var(--border-color);
+  }
+  
+  /* Networks Section */
+  .theme2-social-profile__networks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .theme2-social-profile__network {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .theme2-social-profile__network:hover {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--title-color);
+    transform: scale(1.02);
+  }
+  
+  /* Icons - Circle Background */
+  .theme2-social-profile__icons {
+    font-size: 2rem;
+    color: var(--icons-color);
+    margin-right: 15px;
+    padding: 15px;
+    border-radius: 50%;
+    background-color: var(--icon-background-color);
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .theme2-social-profile__network:hover .theme2-social-profile__icons {
+    transform: rotate(4deg);
+    color: var(--icons-color);
+  }
+  
+  /* Network Link */
+  .theme2-social-profile__network-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  .title-of-social-network{
+    font-size: 1rem;
+    color: var(--title-color);
+  }
+  
+  .theme2-social-profile__network:hover .theme2-social-profile__network-link {
+    color: var(--button-hover-color);
+  }
+  
+  /* Button */
+  .theme2-social-profile__button {
+    background: linear-gradient(135deg, var(--button-color), var(--button-hover-color));
+    color: var(--button-text-color);
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 30px;
+    display: inline-block;
+  }
+  
+  .theme2-social-profile__button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .theme2-social-profile {
+      padding: 25px;
+    }
+  
+    .theme2-social-profile__header {
+      font-size: 2rem;
+    }
+  
+    .theme2-social-profile__networks {
+      grid-template-columns: 1fr;
+    }
+  
+    .theme2-social-profile__network {
+      padding: 15px;
+    }
+  
+    .theme2-social-profile__button {
+      font-size: 1rem;
+      padding: 12px 20px;
+    }
+  }
+  
+
+  /* Default Theme2 Base Style */
+.defualt-social-profile {
+    font-family: var(--font-family);
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header */
+  .defualt-social-profile__header {
+    color: var(--title-color);
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+  }
+  
+  /* Networks Section */
+  .defualt-social-profile__networks {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .defualt-social-profile__network {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background-color: var(--card-background-color);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .defualt-social-profile__network:hover {
+    background-color: var(--hover-background-color);
+    transform: translateX(5px);
+  }
+  
+  /* Small Icons */
+  .defualt-social-profile__icons {
+    font-size: 1.8rem;
+    color: var(--icons-color);
+    margin-right: 10px;
+    padding: 8px;
+    border-radius: 50%;
+    background-color: var(--icon-background-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .defualt-social-profile__network:hover .defualt-social-profile__icons {
+    background-color: var(--hover-icon-background-color);
+    color: var(--hover-icon-color);
+  }
+  
+  /* Text on Right Side */
+  .defualt-social-profile__network-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    flex: 1;
+    transition: color 0.3s ease;
+  }
+  
+  .defualt-social-profile__network:hover .defualt-social-profile__network-link {
+    color: var(--link-hover-color);
+  }
+  
+  /* Button */
+  .defualt-social-profile__button {
+    background-color: var(--button-color);
+    color: var(--button-text-color);
+    border: none;
+    padding: 14px 28px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .defualt-social-profile__button:hover {
+    background-color: var(--button-hover-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .defualt-social-profile {
+      padding: 20px;
+    }
+  
+    .defualt-social-profile__header {
+      font-size: 2rem;
+    }
+  
+    .defualt-social-profile__network {
+      padding: 8px;
+    }
+  
+    .defualt-social-profile__icons {
+      font-size: 1.5rem;
+      padding: 6px;
+    }
+  
+    .defualt-social-profile__network-link {
+      font-size: 1rem;
+    }
+  
+    .defualt-social-profile__button {
+      font-size: 1rem;
+      padding: 12px 20px;
+    }
+  }
+  

@@ -1,0 +1,55 @@
+/* Style for toggle switch */
+.toggle-switchs {
+    position: relative;
+    display: inline-block;
+    width: 70px; /* Make the switch a bit wider */
+    height: 34px; /* Height of the switch */
+}
+
+.toggle-switchs input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-labels {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc; /* Background color when off */
+    transition: 0.4s;
+    border-radius: 34px; /* Round corners for the switch */
+}
+
+.toggle-labels:before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 26px; /* Size of the circle */
+    height: 26px;
+    background-color: white; /* Color of the circle */
+    border-radius: 50%; /* Make the circle round */
+    transition: 0.4s; /* Smooth transition for the circle */
+}
+
+input:checked + .toggle-labels {
+    background-color: #6c18ff; /* Green color when checked */
+}
+
+input:checked + .toggle-labels:before {
+    transform: translateX(36px); /* Move the circle to the right */
+}
+
+.toggle-labels {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    padding-right: 5px;
+    text-transform: capitalize;
+}

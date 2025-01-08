@@ -1,0 +1,162 @@
+/* General Styling for the URL QR Code Generator */
+.url-qr-code-generater-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    min-height: 100vh;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Container for Left and Right Sections */
+.url-qr-code-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%; /* Slightly narrower width */
+    box-sizing: border-box;
+}
+
+/* Left Pane for Input Fields and Button */
+.input-field-btn-left-pane {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 45%;
+    background-color: #f9f9f9;  /* Light background */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+}
+
+.input-field-btn-left-pane input,
+.input-field-btn-left-pane button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+/* Styling for URL Input */
+.input-field-btn-left-pane input[type="url"] {
+    font-size: 18px;
+    background-color: #fff;
+}
+
+.input-field-btn-left-pane input[type="range"] {
+    background-color: #eee;
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+.input-field-btn-left-pane button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.input-field-btn-left-pane button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+.input-field-btn-left-pane button:hover:not(:disabled) {
+    background-color: #444;
+    transform: translateY(-2px); /* Subtle hover effect */
+}
+
+/* Error Message Styling */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* Right Pane for QR Code and Download Button */
+.url-qr-code-right-pane {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 100%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+    position: relative; /* Added for better control over button positioning */
+}
+
+.url-qr-code-right-pane canvas {
+    margin-bottom: 20px;
+    max-width: 90%;
+    height: auto;
+    transition: opacity 0.3s ease-in-out; /* Transition for opacity */
+}
+
+/* Active QR Code - Smooth Visibility */
+.url-qr-code-right-pane .qr-code-canvas {
+    opacity: 0.3;
+}
+
+.url-qr-code-right-pane .qr-code-canvas.active {
+    opacity: 1; /* Full opacity when generated */
+}
+
+/* Download Button Styling */
+.url-qr-code-right-pane button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.url-qr-code-right-pane button:disabled {
+    background-color: #bbb;
+    cursor: not-allowed;
+}
+
+.url-qr-code-right-pane button:hover:not(:disabled) {
+    background-color: #444;
+    transform: translateY(-2px); /* Subtle hover effect */
+}
+
+/* Responsive Design for Small Screens */
+@media (max-width: 768px) {
+    .url-qr-code-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto; /* Allow height to adjust on smaller screens */
+    }
+
+    .input-field-btn-left-pane,
+    .url-qr-code-right-pane {
+        width: 90%; /* Ensure both sides take up full width on small screens */
+        margin-bottom: 20px;
+    }
+
+    .input-field-btn-left-pane button,
+    .url-qr-code-right-pane button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* QR code canvas should not stretch to full width on mobile */
+    .url-qr-code-right-pane canvas {
+        max-width: 80%; 
+    }
+}

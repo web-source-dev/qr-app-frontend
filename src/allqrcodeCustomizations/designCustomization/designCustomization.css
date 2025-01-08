@@ -1,0 +1,119 @@
+.customization-form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+.label-bold-small-big{
+  font-weight: bold;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.color-picker-group {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.color-picker-container {
+  width: 100%;
+  max-width: 280px;
+}
+
+
+.color-picker-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.color-picker-container input[type="color"] {
+  width: 100%;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.color-picker-container input[type="color"]:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.color-picker-container input[type="color"]:focus {
+  outline: none;
+  border: 2px solid #000;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.color-picker-container input[type="color"]::-webkit-color-swatch {
+  border-radius: 10px;
+}
+
+.color-picker-container input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.color-code {
+  font-size: 14px;
+  color: #fff;
+  background-color: #000;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.color-code:hover {
+  background-color: #444; /* Slight hover effect */
+}
+
+@media screen and (max-width: 768px) {
+  .color-picker-group {
+    flex-direction: column; /* Stack color pickers vertically on smaller screens */
+    align-items: center;
+  }
+
+  .color-picker-container {
+    width: 100%;
+    max-width: 100%; /* Ensures containers expand fully on mobile */
+  }
+}
+.color-picker-container {
+  width: 100%;
+}
+.color-picker-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.color-picker-container select:focus {
+  outline: none;
+  border-color: #000; /* Add a focus color */
+}
+
+
+.color-picker-container select option {
+  padding: 10px;
+  font-size: 14px;
+}
+
+/* Dropdown styling for height limitation and scroll */
+.color-picker-container select {
+  height: 40px; /* Normal height */
+  overflow-y: hidden; /* Hide overflow when closed */
+}
+
+.color-picker-container select:focus {
+  height: auto; /* Expand height on focus */
+  max-height: 50px; /* Limit the expanded height */
+  overflow-y: scroll; /* Enable scroll for overflow */
+}
