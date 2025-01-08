@@ -8,7 +8,6 @@
   background: #ffffff;
   /* border-radius: 12px; */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
 }
 
 /* Sidebar Styling */
@@ -91,9 +90,8 @@ ul {
 /* Content Area Styling */
 .content {
   flex: 1;
-  padding: 15px;
   color: #333333;
-  overflow-y: auto;
+  overflow: auto;
   background-color: #f9f9f9;
   border-top-right-radius: 12px;
   border-bottom-right-radius: 12px;

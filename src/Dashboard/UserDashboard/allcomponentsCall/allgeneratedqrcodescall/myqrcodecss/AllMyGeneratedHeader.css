@@ -6,7 +6,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden;
     background-color: white;
   }
   /* Data container styles */
@@ -40,6 +39,9 @@
   border-top:1px solid #6c18ff;
   gap: 10px;
   padding: 0 15px;
+  position: sticky;
+  top: 0px;
+  z-index: 999;
 }
 
 .data-type-dropdown {

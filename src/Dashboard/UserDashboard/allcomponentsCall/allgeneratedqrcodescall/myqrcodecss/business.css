@@ -3,8 +3,13 @@
   .filter-container {
     display: flex;
     justify-content: space-between;
-    border-radius: 8px;
     text-align: left;
+    position: sticky;
+    width: 100%;
+    top: 64px;
+    padding: 10px;
+    z-index: 9999;
+    background-color: rgb(255, 255, 255);
   }
   
   .filter-input, .filter-select {
