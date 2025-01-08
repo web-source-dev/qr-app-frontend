@@ -60,7 +60,7 @@ const AppContent = () => {
     setLoading(true); // Show loading screen when route changes
     const timer = setTimeout(() => {
       setLoading(false); // Hide loading screen after a delay
-    }, 200); // Set to 1 second or however long you want the loading screen to appear
+    }, 2000); // Set to 1 second or however long you want the loading screen to appear
 
     // Cleanup the timer if the component unmounts or location changes
     return () => clearTimeout(timer);
@@ -103,7 +103,7 @@ const AppContent = () => {
         localStorage.removeItem('requestBusinessEdit')
       navigate('/sidebar')
       }
-    }, 180000); // 3 minutes in milliseconds
+    }, 1200000); // 3 minutes in milliseconds
 
   // Call this function on page load
   
