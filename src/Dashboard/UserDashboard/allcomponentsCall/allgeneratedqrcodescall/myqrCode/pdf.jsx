@@ -96,9 +96,11 @@ const PdfDataList = () => {
       localStorage.setItem('configuration', JSON.stringify(selectedBusiness.configuration));
       localStorage.setItem('businessdatasending', JSON.stringify(selectedBusiness));
       localStorage.setItem('requestBusinessEdit', "true");
+      localStorage.setItem('url', '/dashboard/generate/pdf?edit')
+
 
       setTimeout(() => {
-        navigate("/pdf");
+        navigate("/dashboard/generate/pdf?edit");
       }, 3000);
     } else {
       console.error("Business item not found");

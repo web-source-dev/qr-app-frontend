@@ -22,6 +22,7 @@ import CoupanDataList from './coupan';
 import LandingPageDataList from './landingpage';
 import AppDataList from './appdata';
 import ProductDataList from './product';
+import EventDataList from './Event';
 
 const AllMyGeneratedHeader = () => {
 
@@ -41,6 +42,7 @@ const AllMyGeneratedHeader = () => {
     landingpage: 'This is data for QR11.',
     app: 'This is data for QR12.',
     product: 'This is data for QR13.',
+    event: 'This is data for QR14.',
   });
 
   const [staticData, setStaticData] = useState({
@@ -139,6 +141,7 @@ const AllMyGeneratedHeader = () => {
         {dataType === dynamicData && selectedOption === 'landingpage' && <LandingPageDataList socialdata="landingpage" />}
         {dataType === dynamicData && selectedOption === 'app' && <AppDataList socialdata="app" />}
         {dataType === dynamicData && selectedOption === 'product' && <ProductDataList socialdata="product" />}
+        {dataType === dynamicData && selectedOption === 'event' && <EventDataList socialdata="event" />}
 
         {dataType === staticData && selectedOption === 'sms' && <SmsDataList />}
         {dataType === staticData && selectedOption === 'whatsapp' && <WhatsappDataList />}

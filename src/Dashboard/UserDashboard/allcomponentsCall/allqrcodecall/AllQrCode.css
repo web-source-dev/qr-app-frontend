@@ -7,13 +7,16 @@
   min-height: 100%;
   font-family: 'Poppins', sans-serif;
   padding: 30px 10px;
+
 }
 .Select-All-Qr-box-container {
   width: 100%; /* Fixed width for the left side */
   display: flex;
-  gap: 20px;
   flex-direction: column;
   padding: 0 10px;
+  height: 80vh;
+  gap: 20px;
+  overflow-y: auto;
 }
 
 /* Selector Sections */
@@ -41,7 +44,7 @@
 /* QR Code Boxes */
 .Select-All-Qr-box {
   padding: 0 10px;
-  width: 400px;
+  width: 380px;
   height: 80px;
   display: flex;
   flex-direction: column;

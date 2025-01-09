@@ -96,9 +96,10 @@ const LandingPageDataList = () => {
       localStorage.setItem('configuration', JSON.stringify(selectedBusiness.configuration));
       localStorage.setItem('businessdatasending', JSON.stringify(selectedBusiness));
       localStorage.setItem('requestBusinessEdit', "true");
+      localStorage.setItem('url', '/dashboard/generate/landingpage?edit')
 
       setTimeout(() => {
-        navigate("/landingpage");
+        navigate("/dashboard/generate/landingpage?edit");
       }, 3000);
     } else {
       console.error("Business item not found");

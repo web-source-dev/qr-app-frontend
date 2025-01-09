@@ -97,8 +97,10 @@ const ProductDataList = () => {
       localStorage.setItem('businessdatasending', JSON.stringify(selectedBusiness));
       localStorage.setItem('requestBusinessEdit', "true");
 
+      localStorage.setItem('url', '/dashboard/generate/product?edit')
+
       setTimeout(() => {
-        navigate("/product");
+        navigate("/dashboard/generate/product?edit");
       }, 3000);
     } else {
       console.error("Business item not found");

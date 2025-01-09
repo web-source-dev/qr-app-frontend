@@ -160,8 +160,9 @@ export const FormProvider = ({ children }) => {
           localStorage.removeItem('customization')
           localStorage.removeItem('qrDesign')
           localStorage.removeItem('requestBusinessEdit')
+          localStorage.removeItem('url')
 
-          navigate('/sidebar')
+          navigate('/dashboard')
       }, 3000);
     } catch (error) {
       console.error(error);
@@ -192,7 +193,7 @@ export const FormProvider = ({ children }) => {
    // Save the current page path to localStorage
    // Navigate to the home page or "Buy Credits" page
    localStorage.setItem("pricing",'true')
-   navigate("/sidebar");
+   navigate("/dashboard");
   };
   const fetchBusinessData = async (socialdata) => {
     if (!user_id) {

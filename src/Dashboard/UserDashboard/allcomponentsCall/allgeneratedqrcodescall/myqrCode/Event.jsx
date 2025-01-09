@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 import { useFormContext } from '../../../../../allqrcodeCustomizations/globalsetup/globaldata';
 
 
-const BusinessDataList = () => {
-  const { setBusinessData, handleDeleteClick, handleActiveClick,formatDate, setFilteredData, setLoading, setError, businessData, filteredData, loading, error, handleSubmit, qrvalueide, handleUpdate, buyCredits, fetchBusinessData, handleDownload, handleBuyCredits, isPopupOpen, handleClosePopup } = useFormContext()
+const EventDataList = () => {
+  const { setBusinessData, handleDeleteClick, handleActiveClick, formatDate, setFilteredData, setLoading, setError, businessData, filteredData, loading, error, handleSubmit, qrvalueide, handleUpdate, buyCredits, fetchBusinessData, handleDownload, handleBuyCredits, isPopupOpen, handleClosePopup } = useFormContext()
 
   const navigate = useNavigate()
   const [filters, setFilters] = useState({
@@ -33,7 +33,7 @@ const BusinessDataList = () => {
 
   useEffect(() => {
 
-    fetchBusinessData('instagram');
+    fetchBusinessData('event');
     console.log('check data for business', businessData)
   }, []);
 
@@ -41,7 +41,6 @@ const BusinessDataList = () => {
     const { name, value } = e.target;
     setFilters((prev) => ({ ...prev, [name]: value }));
   };
-
 
   useEffect(() => {
     let filtered = [...businessData];
@@ -68,7 +67,6 @@ const BusinessDataList = () => {
       const limit = parseInt(filters.scanLimit, 10);
       filtered = filtered.filter((item) => item.configuration.scan_count <= limit);
     }
-
     if (filters.qrCodeText) {
       filtered = filtered.filter((item, index) =>
         (item.qrDesign?.logoText || `qr-code ${index + 1}`)
@@ -76,6 +74,7 @@ const BusinessDataList = () => {
           .includes(filters.qrCodeText.toLowerCase())
       );
     }
+
     setFilteredData(filtered);
   }, [filters, businessData]);
 
@@ -97,11 +96,10 @@ const BusinessDataList = () => {
       localStorage.setItem('configuration', JSON.stringify(selectedBusiness.configuration));
       localStorage.setItem('businessdatasending', JSON.stringify(selectedBusiness));
       localStorage.setItem('requestBusinessEdit', "true");
-      localStorage.setItem('url', '/dashboard/generate/business?edit')
-
+      localStorage.setItem('url', '/dashboard/generate/event?edit')
 
       setTimeout(() => {
-        navigate("/dashboard/generate/business?edit");
+        navigate("/dashboard/generate/event?edit");
       }, 3000);
     } else {
       console.error("Business item not found");
@@ -109,12 +107,12 @@ const BusinessDataList = () => {
   };
 
 
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
   return (
     <div>
-
       {/* Filters Section */}
       <div className="filter-container">
         <input
@@ -155,10 +153,9 @@ const BusinessDataList = () => {
         filteredData.map((business, index) => (
           <div key={business._id} className="business-item">
             <div className="small-row-container-for-qr-code-display">
-
               <div className="display-sda">
-                <h3>{index + 1}.</h3> 
-              <div className="qr-code-display-container">
+              <h3>{index + 1}.</h3> 
+                <div className="qr-code-display-container">
                   <div
                     ref={(el) => (qrCodeRefs.current[index] = el)}
                     style={{
@@ -168,7 +165,7 @@ const BusinessDataList = () => {
                     className={`${business.qrDesign?.frame || ""}`}
                   >
                     <QRCode
-                      value={`${process.env.REACT_APP_FRONTEND_URL}/display/qr-business/${business._id}`}
+                      value={`${process.env.REACT_APP_FRONTEND_URL}/display/qr-video/${business._id}`}
                       ecLevel={business.qrDesign?.ecLevel || "L"}
                       enableCORS={business.qrDesign?.enableCORS || true}
                       size={100}
@@ -191,10 +188,10 @@ const BusinessDataList = () => {
                   </div>
                 </div>
                 <div className="text-for-each-qr-name-or-short-title">
-                  <h3 className="type-of-qr">Business</h3>
-                  {business.qrDesign?.logoText || `Untitled`}
+                <h3 className="type-of-qr">Video</h3> 
+                  {business.qrDesign?.logoText || `Untitled `}
                   <p style={{fontWeight:'lighter',fontSize:'14px'}}><b>Created At: </b>{business.createdAt && formatDate(business.createdAt)}</p>
-                  <div className="download-button" style={{ fontSize: "15px", fontWeight: 'lighter', padding: "0px 5px",marginTop:'20px' }} data-tooltip="Size: 175kb" onClick={() => handleDownloadWithRef(index)}>
+                  <div className="download-button" style={{ fontSize: "15px", fontWeight: 'lighter', padding: "0px 10px", marginTop:'20px' }} data-tooltip="Size: 175kb" onClick={() => handleDownloadWithRef(index)}>
                     <div className="download-button-wrapper">
                       <div className="download-text">Download</div>
                       <span className="download-icon">
@@ -261,7 +258,7 @@ const BusinessDataList = () => {
                 <button className="btn-18" onClick={() => handleEditClick(business._id)}>
                   <span> edit</span>
                 </button>
-                <button className="btn-18" onClick={() => handleDeleteClick('instagram', business._id)}>
+                <button className="btn-18" onClick={() => handleDeleteClick('event', business._id)}>
                   <span> Delete</span>
                 </button>
 
@@ -278,4 +275,4 @@ const BusinessDataList = () => {
   );
 };
 
-export default BusinessDataList;
+export default EventDataList;

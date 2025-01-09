@@ -8,19 +8,19 @@ import UserLogin from './Userlogin/UserLogin';
 import UserSignup from './Userlogin/UserSignup';
 import axios from 'axios';
 import Home from './pages/Home';
-import Urlqr from './allqrcodefiles/urlqr/urlqr';
-import Wifiqr from './allqrcodefiles/wifiqr/wifiqr';
-import MessageQR from './allqrcodefiles/messageqr/messageqr';
-import Smsqr from './allqrcodefiles/smsqr/smsqr';
-import EmailQrGenerator from './allqrcodefiles/emailsendqr/emailsendqr';
-import WhatsAppQrGenerator from './allqrcodefiles/whatsappqrmsg/whatsappqrmsg';
-import VcardCreate from './allqrcodefiles/vcardqr/vcardcreateqr';
+// import Urlqr from './allqrcodefiles/urlqr/urlqr';
+// import Wifiqr from './allqrcodefiles/wifiqr/wifiqr';
+// import MessageQR from './allqrcodefiles/messageqr/messageqr';
+// import Smsqr from './allqrcodefiles/smsqr/smsqr';
+// import EmailQrGenerator from './allqrcodefiles/emailsendqr/emailsendqr';
+// import WhatsAppQrGenerator from './allqrcodefiles/whatsappqrmsg/whatsappqrmsg';
+// import VcardCreate from './allqrcodefiles/vcardqr/vcardcreateqr';
 import VcardShowqrData from './allqrcodefiles/vcardqr/vcarddisplayqrdata';
-import InstagramQr from './allqrcodefiles/instagramaccountqr/instagramaccounqr';
-import FacebookQr from './allqrcodefiles/facebookaccountqr/facebookaccountqr';
-import SocialProfile from './allqrcodefiles/socialprofile/SocialProfile';
+// import InstagramQr from './allqrcodefiles/instagramaccountqr/instagramaccounqr';
+// import FacebookQr from './allqrcodefiles/facebookaccountqr/facebookaccountqr';
+// import SocialProfile from './allqrcodefiles/socialprofile/SocialProfile';
 import SocialProfileDisplay from './allqrcodefiles/socialprofile/SoicalProfileView';
-import BusinessForm from './allqrcodefiles/businesscsvqr/BusinessCsvqr';
+// import BusinessForm from './allqrcodefiles/businesscsvqr/BusinessCsvqr';
 import { GlobalConfigProvider } from './allqrcodefiles/stats/configuration/globalconfig';
 import { CustomizationProvider } from './allqrcodeCustomizations/designCustomization/globalcustomization';
 import { QRProvider } from './allqrcodeCustomizations/qrCodeCustomization/globalqrcodedesign';
@@ -28,26 +28,15 @@ import PaymentWrapper from './payments/PaymentReceive';
 import { PaymentProvider } from './payments/PaymentContext';
 import ThankYouPage from './payments/ThankYouPage';
 import DisplayBusinessData from './allqrcodefiles/businesscsvqr/displaybusinessdata';
-import Sidebar from './pages/Sidebar';
 import { FormProvider } from './allqrcodeCustomizations/globalsetup/globaldata';
 import DisplaySocialData from './allqrcodefiles/socialprofile/DisplaySocialdata';
-import ShopMenuForm from './allqrcodefiles/ShopMenuCard/ShopMenu';
 import AfterScanDisplayShopMenu from './allqrcodefiles/ShopMenuCard/AfterScandisplayShopmenu';
 import { GlobalLocalProvider } from './allqrcodeCustomizations/globallocalqr/GlobalLocalQr';
 import Navbar from './pages/Navbar';
 import DisplayImages from './allqrcodefiles/Imagesqr/DisplayImagesQr';
-import ImagesQr from './allqrcodefiles/Imagesqr/ImagesQr';
-import VideoQr from './allqrcodefiles/VideoQr/VideoQr';
-import MusicQr from './allqrcodefiles/MusicQR/MusicQR';
-import PdfQr from './allqrcodefiles/PdfQr/PdfQr';
 import MusicDisplay from './allqrcodefiles/MusicQR/MobileMusicDisplay';
-import ListOfLinksQr from './allqrcodefiles/ListOfLinks/ListofLinks';
-import CoupanQR from './allqrcodefiles/CoupanQr/CoupanQr';
 import DisplaylandingPage from './allqrcodefiles/LandingPage/DisplayLandingPage';
-import LandingPageQr from './allqrcodefiles/LandingPage/LandingPage';
-import AppQr from './allqrcodefiles/AppQr/AppQr';
-import SendEmailBroadcast from './allqrcodeCustomizations/globalsetup/check';
-import Page404 from './pages/page404';
+import Dashboard from './Dashboard/UserDashboard/DashboardMain';
 
 
 const AppContent = () => {
@@ -60,7 +49,7 @@ const AppContent = () => {
     setLoading(true); // Show loading screen when route changes
     const timer = setTimeout(() => {
       setLoading(false); // Hide loading screen after a delay
-    }, 2000); // Set to 1 second or however long you want the loading screen to appear
+    }, 10); // Set to 1 second or however long you want the loading screen to appear
 
     // Cleanup the timer if the component unmounts or location changes
     return () => clearTimeout(timer);
@@ -101,7 +90,7 @@ const AppContent = () => {
       console.log("LocalStorage cleared after 3 minutes.");
       if(remove){
         localStorage.removeItem('requestBusinessEdit')
-      navigate('/sidebar')
+      navigate('/dashboard')
       }
     }, 1200000); // 3 minutes in milliseconds
 
@@ -120,7 +109,6 @@ const AppContent = () => {
 
   
   const backendUrl = process.env.REACT_APP_BACKEND_URL;
-  console.log(backendUrl)
 
   return (
     <div>
@@ -139,32 +127,11 @@ const AppContent = () => {
         <Route path="/edit/:userId" element={<EditQRForm />} />
         <Route path="/user/login" element={<UserLogin />} />
         <Route path="/user/signup" element={<UserSignup />} />
-        <Route path="/qr/url" element={<Urlqr />} />
-        <Route path="/qr/wifi" element={<Wifiqr />} />
-        <Route path="/qr/message" element={<MessageQR />} />
-        <Route path="/qr/sms" element={<Smsqr />} />
-        <Route path="/qr/email/send" element={<EmailQrGenerator />} />
         <Route path="/vcard/:id" element={<VcardShowqrData />} />
-        <Route path="/vcard" element={<VcardCreate/>} />
-        <Route path="/qr/instagram" element={<InstagramQr/>} />
-        <Route path="/qr/facebook" element={<FacebookQr/>} />
-        <Route path="/qr/whatsapp/send" element={<WhatsAppQrGenerator />} />
-        <Route path="/qr/socialprofile" element={<SocialProfile />} />
-        <Route path="/qr/socialprofile/:qrId" element={<SocialProfileDisplay />} />
-        <Route path="/qr/businessqr" element={<BusinessForm />} />
         <Route path="/qr/payment" element={<PaymentWrapper />} />
         <Route path="/success" element={<ThankYouPage />} />
-        <Route path="/dashboard" element={<Sidebar />} />
-        <Route path="/images" element={<ImagesQr />} />
-        <Route path="/video" element={<VideoQr />} />
-        <Route path="/music" element={<MusicQr />} />
-        <Route path="/check" element={<SendEmailBroadcast />} />
-        <Route path="/landingpage" element={<LandingPageQr />} />
-        <Route path="/coupan" element={<CoupanQR />} />
-        <Route path="/pdf" element={<PdfQr />} />
-        <Route path="/app" element={<AppQr />} />
-        <Route path="/listoflinks" element={<ListOfLinksQr />} />
-        <Route path="/shopmenu" element={<ShopMenuForm />} />
+        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route path="/qr/socialprofile/:qrId" element={<SocialProfileDisplay />} />
         <Route path="display/qr-business/:qrId" element={<DisplayBusinessData />} />
         <Route path="display/qr-social/:qrId" element={<DisplaySocialData />} />
         <Route path="display/qr-shopmenu/:qrId" element={<AfterScanDisplayShopMenu />} />
@@ -172,9 +139,7 @@ const AppContent = () => {
         <Route path="display/qr-images/:qrId" element={<DisplayImages />} />
         <Route path="display/qr-video/:qrId" element={<DisplayImages />} />
         <Route path="display/qr-music/:qrId" element={<MusicDisplay />} />
-        <Route path="*" element={<Page404 />} />
-
-
+        {/* <Route path="*" element={<Page404 />} /> */}
       </Routes>
       </GlobalLocalProvider>
       </FormProvider>

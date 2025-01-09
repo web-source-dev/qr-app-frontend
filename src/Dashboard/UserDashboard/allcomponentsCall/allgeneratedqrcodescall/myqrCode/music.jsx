@@ -96,9 +96,10 @@ const MusicDataList = () => {
       localStorage.setItem('configuration', JSON.stringify(selectedBusiness.configuration));
       localStorage.setItem('businessdatasending', JSON.stringify(selectedBusiness));
       localStorage.setItem('requestBusinessEdit', "true");
+      localStorage.setItem('url', '/dashboard/generate/music?edit')
 
       setTimeout(() => {
-        navigate("/music");
+        navigate("/dashboard/generate/music?edit");
       }, 3000);
     } else {
       console.error("Business item not found");

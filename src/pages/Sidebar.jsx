@@ -1,95 +1,29 @@
-import React, { useEffect, useState } from 'react';
-import './Sidebar.css'; // Import external CSS
-import AllQrCodeCall from '../Dashboard/UserDashboard/allcomponentsCall/allqrcodecall/AllQrCodeCall';
-import Allmygeneratedheader from '../Dashboard/UserDashboard/allcomponentsCall/allgeneratedqrcodescall/myqrCode/allmygeneratedheader';
-import CreditsSelection from '../payments/CreditSelection';
-import Settings from '../Dashboard/UserDashboard/Settings/Settings';
-import axios from 'axios';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Sidebar.css'; // Import the external CSS file
+
 const Sidebar = () => {
-  const navigate = useNavigate()
-  const [selected, setSelected] = useState('MyQRCodes');
-  const user_id = localStorage.getItem('user_id');
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!user_id) {
-      navigate('/user/login')
-    }
-        setTimeout(() => {
-      localStorage.removeItem('businessdatasending')
-      localStorage.removeItem('configuration')
-      localStorage.removeItem('customization')
-      localStorage.removeItem('qrDesign')
-      const remove = localStorage.getItem('requestBusinessEdit')
-      if(remove){
-        localStorage.removeItem('requestBusinessEdit')
-      }
-    }, 2000); // 2 sec in milliseconds
-  },[])
-
-  const menuItems = [
-    { id: 'GenerateQR', label: 'Generate QR Code' },
-    { id: 'MyQRCodes', label: 'My QR Codes' },
-    { id: 'Settings', label: 'Settings' },
-    { id: 'PlansPayments', label: 'Plans & Payments' },
-  ];
-  
-  const handleLogout = async () => {
-    console.log('logout');
-  
-    try {
-      const user_id = localStorage.getItem('user_id');
-      const logoutResponse = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/logout`, { userId: user_id });
-  
-      if (logoutResponse.status === 200) {
-        localStorage.clear();
-        navigate('/user/login')
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  
-    console.log('Logged out');
+  const handleMenuClick = (path) => {
+    navigate(`/dashboard/${path}`);
   };
-  
-  return (
-    <div className="sidebar-container">
-      {/* Sidebar */}
-      <div className="sidebar">
-        <nav>
-          <ul>  
-            {menuItems.map((item) => (
-              <li
-                key={item.id}
-                className={selected === item.id ? 'menu-item active' : 'menu-item'}
-                onClick={() => setSelected(item.id)}
-              >
-                {item.label}
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <button className="logout-button" onClick={handleLogout}>
-          Logout
-        </button>
-      </div>
 
-      <div className="content">
-   
-        {selected === 'GenerateQR' &&
-        <AllQrCodeCall />
-        }
-        {selected === 'MyQRCodes' &&
-        <Allmygeneratedheader />
-        }
-        {selected === 'Settings' &&
-        <Settings />
-        }
-        {selected === 'PlansPayments' &&
-        <CreditsSelection />
-        }
-      </div>
-    </div>
+  return (
+    <nav className="sidebar">
+      <h3 className="sidebar-heading">Sidebar</h3>
+      <ul className="sidebar-menu">
+        {['generate', 'manage', 'settings', 'planspayments'].map((item) => (
+          <li
+            key={item}
+            className="sidebar-menu-item"
+            onClick={() => handleMenuClick(item)}
+          >
+            {item}
+          </li>
+        ))}
+      </ul>
+    </nav>
   );
 };
 

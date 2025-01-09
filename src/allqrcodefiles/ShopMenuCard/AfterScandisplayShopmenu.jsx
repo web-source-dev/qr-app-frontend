@@ -4,6 +4,23 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import ShopMenuDisplay from './ShopMenuDisplay';
 
+let startTime = Date.now();
+
+function calculateTimeOnPage() {
+    const currentTime = Date.now();
+    return Math.floor((currentTime - startTime) / 1000); // Convert milliseconds to seconds
+}
+
+// Example function to send click events
+let clickEvents = [];
+document.addEventListener('click', (event) => {
+    clickEvents.push({
+        type: 'click',
+        timestamp: Date.now(),
+        target: event.target.tagName, // Log the tag name of the clicked element
+    });
+});
+
 const AfterScanDisplayShopMenu = () => {
   const { qrId } = useParams(); // Get qrId from URL params
   const [configData, setConfigData] = useState(null);
@@ -14,11 +31,24 @@ const AfterScanDisplayShopMenu = () => {
   const [isPasswordCorrect, setIsPasswordCorrect] = useState(false);
   const [ConfigurationData, setConfigurationData] = useState([]);
 
+  
   useEffect(() => {
     const fetchConfigData = async () => {
       try {
-        const configResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/diplay/qr/data/configuration/${qrId}`);
-        setConfigData(configResponse.data.config);
+        // Construct the headers
+        const headers = {
+            'x-screen-resolution': `${window.screen.width}x${window.screen.height}`,
+            'x-color-depth': `${window.screen.colorDepth}`,
+            'x-time-on-page': calculateTimeOnPage(), // Calculate dynamically based on time spent
+            'x-click-events': JSON.stringify(clickEvents), // Send click events as JSON string
+        };
+
+        // Make the Axios GET request with the headers
+        const configResponse = await axios.get(
+            `http://localhost:5000/diplay/qr/data/configuration/${qrId}`,
+            { headers }
+        );
+                setConfigData(configResponse.data.config);
         console.log('Configuration data fetched:', configResponse.data.config);
   
         if (configResponse.data.config?.active_password) {

@@ -5,6 +5,8 @@
   "dependencies": {
     "@cloudinary/react": "^1.13.1",
     "@cloudinary/url-gen": "^1.21.0",
+    "@coreui/icons": "^3.0.1",
+    "@coreui/react": "^5.4.1",
     "@stripe/react-stripe-js": "^3.0.0",
     "@stripe/stripe-js": "^5.2.0",
     "@testing-library/jest-dom": "^5.17.0",

@@ -96,9 +96,10 @@ const ShopMenuDataList = () => {
       localStorage.setItem('configuration', JSON.stringify(selectedBusiness.configuration));
       localStorage.setItem('businessdatasending', JSON.stringify(selectedBusiness));
       localStorage.setItem('requestBusinessEdit', "true");
+      localStorage.setItem('url', '/dashboard/generate/shopmenu?edit')
 
       setTimeout(() => {
-        navigate("/shopmenu");
+        navigate("/dashboard/generate/shopmenu?edit");
       }, 3000);
     } else {
       console.error("Business item not found");

@@ -96,9 +96,11 @@ const CoupanDataList = () => {
       localStorage.setItem('configuration', JSON.stringify(selectedBusiness.configuration));
       localStorage.setItem('businessdatasending', JSON.stringify(selectedBusiness));
       localStorage.setItem('requestBusinessEdit', "true");
+      localStorage.setItem('url', '/dashboard/generate/coupan?edit')
+
 
       setTimeout(() => {
-        navigate("/coupan");
+        navigate("/dashboard/generate/coupan?edit");
       }, 3000);
     } else {
       console.error("Business item not found");

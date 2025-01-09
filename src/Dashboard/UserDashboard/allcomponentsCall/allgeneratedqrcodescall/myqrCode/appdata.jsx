@@ -96,9 +96,11 @@ const AppDataList = () => {
       localStorage.setItem('configuration', JSON.stringify(selectedBusiness.configuration));
       localStorage.setItem('businessdatasending', JSON.stringify(selectedBusiness));
       localStorage.setItem('requestBusinessEdit', "true");
+      localStorage.setItem('url', '/dashboard/generate/app?edit')
+
 
       setTimeout(() => {
-        navigate("/applinks");
+        navigate("/dashboard/generate/app?edit");
       }, 3000);
     } else {
       console.error("Business item not found");

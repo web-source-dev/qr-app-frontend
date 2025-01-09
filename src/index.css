@@ -1510,9 +1510,22 @@ input{
 input:focus{
   border-color: 2px solid #6c18ff;
 }
-
-
-
-
-
-
+::-webkit-scrollbar{
+  width: 10px;
+}
+::-webkit-scrollbar-button{
+  display: none;
+}
+::-webkit-scrollbar-track{
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb{
+  background: #ccc;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: #6c18ff;
+}
+::-webkit-scrollbar-track:hover{
+  background: #ccc;
+}

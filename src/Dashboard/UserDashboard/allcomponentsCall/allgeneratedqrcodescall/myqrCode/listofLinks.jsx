@@ -96,9 +96,11 @@ const ListofLinksDataList = () => {
       localStorage.setItem('configuration', JSON.stringify(selectedBusiness.configuration));
       localStorage.setItem('businessdatasending', JSON.stringify(selectedBusiness));
       localStorage.setItem('requestBusinessEdit', "true");
+      localStorage.setItem('url', '/dashboard/generate/listoflinks?edit')
+
 
       setTimeout(() => {
-        navigate("/listoflinks");
+        navigate("/dashboard/generate/listoflinks?edit");
       }, 3000);
     } else {
       console.error("Business item not found");

@@ -24,11 +24,13 @@ import AppQr from '../../../../allqrcodefiles/AppQr/AppQr';
 import ProductQr from '../../../../allqrcodefiles/ProductQr/ProductQr';
 import EventQrForm from '../../../../allqrcodefiles/EventQr/EventQr';
 import BarcodeGenerator from '../../../../allqrcodefiles/Barcode/Barcode';
+import { useNavigate } from 'react-router-dom';
 
 const AllQrCodeCall = () => {
   const [selectedBox, setSelectedBox] = useState(null);
   const [hoveredBox, setHoveredBox] = useState(null); // State for hovered box
 
+  const navigate = useNavigate()
   // List of box names with image links
   const DynamicQrSelector = [
     { id: 'social',
@@ -248,30 +250,30 @@ const AllQrCodeCall = () => {
             🔙
           </button>
           <div className="Select-All-Qr-content-container">
-            {selectedBox === 'shopmenu' && <ShopMenuForm />}
-            {selectedBox === 'videos' && <VideoQr />}
-            {selectedBox === 'wifiqr' && <Wifiqr />}
-            {selectedBox === 'images' && <ImagesQr />}
-            {selectedBox === 'business' && <TimeScheduleForm />}
-            {selectedBox === 'social' && <SocialProfile />}
-            {selectedBox === 'facebookqr' && <FacebookQr />}
-            {selectedBox === 'instaqr' && <InstagramQr />}
-            {selectedBox === 'urlqr' && <Urlqr />}
-            {selectedBox === 'message' && <MessageQr />}
-            {selectedBox === 'vcard' && <VcardCreate />}
-            {selectedBox === 'emailqr' && <EmailQrGenerator />}
-            {selectedBox === 'whatsapp' && <WhatsAppQrGenerator />}
-            {selectedBox === 'smsqr' && <Smsqr />}
-            {selectedBox === 'pdf' && <PdfQr />}
-            {selectedBox === 'music' && <MusicQr />}
-            {selectedBox === 'vcardplus' && <VcardPlusQR />}
-            {selectedBox === 'listoflinks' && <ListOfLinksQr />}
-            {selectedBox === 'coupan' && <CoupanQR />}
-            {selectedBox === 'landingpage' && <LandingPageQr />}
-            {selectedBox === 'app' && <AppQr />}
-            {selectedBox === 'product' && <ProductQr />}
-            {selectedBox === 'event' && <EventQrForm />}
-            {selectedBox === 'barcode' && <BarcodeGenerator />}
+            {selectedBox === 'shopmenu' && navigate(`/dashboard/generate/shopmenu`)}
+            {selectedBox === 'videos' && navigate(`/dashboard/generate/video`)}
+            {selectedBox === 'wifiqr' && navigate(`/dashboard/generate/wifi`)}
+            {selectedBox === 'images' && navigate(`/dashboard/generate/images`)}
+            {selectedBox === 'business' && navigate(`/dashboard/generate/business`)}
+            {selectedBox === 'social' && navigate(`/dashboard/generate/socialprofile`)}
+            {selectedBox === 'facebookqr' && navigate(`/dashboard/generate/facebook`)}
+            {selectedBox === 'instaqr' && navigate(`/dashboard/generate/instagram`)}
+            {selectedBox === 'urlqr' && navigate(`/dashboard/generate/url`)}
+            {selectedBox === 'message' && navigate(`/dashboard/generate/message`)}
+            {selectedBox === 'vcard' && navigate(`/dashboard/generate/vcard`)}
+            {selectedBox === 'emailqr' && navigate(`/dashboard/generate/email`)}
+            {selectedBox === 'whatsapp' && navigate(`/dashboard/generate/whatsapp`)}
+            {selectedBox === 'smsqr' && navigate(`/dashboard/generate/sms`)}
+            {selectedBox === 'pdf' && navigate(`/dashboard/generate/pdf`)}
+            {selectedBox === 'music' && navigate(`/dashboard/generate/music`)}
+            {selectedBox === 'vcardplus' && navigate(`/dashboard/generate/vcardplus`)}
+            {selectedBox === 'listoflinks' && navigate(`/dashboard/generate/listoflinks`)}
+            {selectedBox === 'coupan' && navigate(`/dashboard/generate/coupan`)}
+            {selectedBox === 'landingpage' && navigate(`/dashboard/generate/landingpage`)}
+            {selectedBox === 'app' && navigate(`/dashboard/generate/app`)}
+            {selectedBox === 'product' && navigate(`/dashboard/generate/product`)}
+            {selectedBox === 'event' && navigate(`/dashboard/generate/event`)}
+            {selectedBox === 'barcode' && navigate(`/dashboard/generate/barcode`)}
           </div>
         </div>
       )}
