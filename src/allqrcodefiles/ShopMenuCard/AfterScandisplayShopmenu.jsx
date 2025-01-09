@@ -45,7 +45,7 @@ const AfterScanDisplayShopMenu = () => {
 
         // Make the Axios GET request with the headers
         const configResponse = await axios.get(
-            `http://localhost:5000/diplay/qr/data/configuration/${qrId}`,
+            `${process.env.REACT_APP_BACKEND_URL}/diplay/qr/data/configuration/${qrId}`,
             { headers }
         );
                 setConfigData(configResponse.data.config);
