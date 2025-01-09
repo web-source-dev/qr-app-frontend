@@ -37,7 +37,7 @@ const AfterScanDisplayShopMenu = () => {
       try {
         // Construct the headers
         const headers = {
-            'x-screen-resolution': `${window.screen.width}x${window.screen.height}`,
+            // 'x-screen-resolution': `${window.screen.width}x${window.screen.height}`,
             // 'x-color-depth': `${window.screen.colorDepth}`,
             'x-time-on-page': calculateTimeOnPage(), // Calculate dynamically based on time spent
             'x-click-events': JSON.stringify(clickEvents), // Send click events as JSON strin
