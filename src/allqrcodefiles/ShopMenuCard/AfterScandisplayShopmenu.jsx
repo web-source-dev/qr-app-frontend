@@ -37,17 +37,17 @@ const AfterScanDisplayShopMenu = () => {
       try {
         // Construct the headers
         const headers = {
-          'x-screen-resolution': `${window.screen.width}x${window.screen.height}`,
-          'x-color-depth': `${window.screen.colorDepth}`,
-          'x-time-on-page': calculateTimeOnPage(), // Calculate dynamically based on time spent
-          'x-click-events': JSON.stringify(clickEvents), // Send click events as JSON strin
-      };
+            'x-screen-resolution': `${window.screen.width}x${window.screen.height}`,
+            'x-color-depth': `${window.screen.colorDepth}`,
+            'x-time-on-page': calculateTimeOnPage(), // Calculate dynamically based on time spent
+            'x-click-events': JSON.stringify(clickEvents), // Send click events as JSON string
+        };
 
-      // Make the Axios GET request with the headers
-      const configResponse = await axios.get(
-          `${process.env.REACT_APP_BACKEND_URL}/diplay/qr/data/configuration/${qrId}`,
-          { headers }
-      );
+        // Make the Axios GET request with the headers
+        const configResponse = await axios.get(
+            `http://localhost:5000/diplay/qr/data/configuration/${qrId}`,
+            { headers }
+        );
                 setConfigData(configResponse.data.config);
         console.log('Configuration data fetched:', configResponse.data.config);
   
