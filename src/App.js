@@ -8,19 +8,8 @@ import UserLogin from './Userlogin/UserLogin';
 import UserSignup from './Userlogin/UserSignup';
 import axios from 'axios';
 import Home from './pages/Home';
-// import Urlqr from './allqrcodefiles/urlqr/urlqr';
-// import Wifiqr from './allqrcodefiles/wifiqr/wifiqr';
-// import MessageQR from './allqrcodefiles/messageqr/messageqr';
-// import Smsqr from './allqrcodefiles/smsqr/smsqr';
-// import EmailQrGenerator from './allqrcodefiles/emailsendqr/emailsendqr';
-// import WhatsAppQrGenerator from './allqrcodefiles/whatsappqrmsg/whatsappqrmsg';
-// import VcardCreate from './allqrcodefiles/vcardqr/vcardcreateqr';
 import VcardShowqrData from './allqrcodefiles/vcardqr/vcarddisplayqrdata';
-// import InstagramQr from './allqrcodefiles/instagramaccountqr/instagramaccounqr';
-// import FacebookQr from './allqrcodefiles/facebookaccountqr/facebookaccountqr';
-// import SocialProfile from './allqrcodefiles/socialprofile/SocialProfile';
 import SocialProfileDisplay from './allqrcodefiles/socialprofile/SoicalProfileView';
-// import BusinessForm from './allqrcodefiles/businesscsvqr/BusinessCsvqr';
 import { GlobalConfigProvider } from './allqrcodefiles/stats/configuration/globalconfig';
 import { CustomizationProvider } from './allqrcodeCustomizations/designCustomization/globalcustomization';
 import { QRProvider } from './allqrcodeCustomizations/qrCodeCustomization/globalqrcodedesign';
@@ -37,6 +26,9 @@ import DisplayImages from './allqrcodefiles/Imagesqr/DisplayImagesQr';
 import MusicDisplay from './allqrcodefiles/MusicQR/MobileMusicDisplay';
 import DisplaylandingPage from './allqrcodefiles/LandingPage/DisplayLandingPage';
 import Dashboard from './Dashboard/UserDashboard/DashboardMain';
+import Page404 from './pages/page404';
+import PaymentPage from './payments/PaymentReceive';
+import PaymentPopup from './payments/PaymentReceive';
 
 
 const AppContent = () => {
@@ -130,6 +122,7 @@ const AppContent = () => {
         <Route path="/vcard/:id" element={<VcardShowqrData />} />
         <Route path="/qr/payment" element={<PaymentWrapper />} />
         <Route path="/success" element={<ThankYouPage />} />
+        <Route path="/payment" element={<PaymentPopup />} />
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="/qr/socialprofile/:qrId" element={<SocialProfileDisplay />} />
         <Route path="display/qr-business/:qrId" element={<DisplayBusinessData />} />
@@ -139,7 +132,7 @@ const AppContent = () => {
         <Route path="display/qr-images/:qrId" element={<DisplayImages />} />
         <Route path="display/qr-video/:qrId" element={<DisplayImages />} />
         <Route path="display/qr-music/:qrId" element={<MusicDisplay />} />
-        {/* <Route path="*" element={<Page404 />} /> */}
+        <Route path="*" element={<Page404 />} />
       </Routes>
       </GlobalLocalProvider>
       </FormProvider>

@@ -13,7 +13,7 @@ const Sidebar = () => {
     <nav className="sidebar">
       <h3 className="sidebar-heading">Sidebar</h3>
       <ul className="sidebar-menu">
-        {['generate', 'manage', 'settings', 'planspayments'].map((item) => (
+        {['generate', 'manage', 'settings', 'payments','managepayment'].map((item) => (
           <li
             key={item}
             className="sidebar-menu-item"

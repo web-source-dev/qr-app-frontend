@@ -26,9 +26,9 @@ export const PaymentProvider = ({ children }) => {
       if (data.clientSecret) {
         setClientSecret(data.clientSecret);
         setSelectedCredits(credits);
-        localStorage.setItem('selectCredit', credits);
         console.log('see',credits);
         setPaymentPopupOpen(true);
+        localStorage.setItem('selectCredit', credits);
       } else {
         console.error("Failed to retrieve clientSecret.");
       }

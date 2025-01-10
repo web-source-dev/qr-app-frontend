@@ -21,6 +21,11 @@ const UserLogin = () => {
     });
   };
 
+  const safeSetItem = (key, value) => {
+    if (value !== null && value !== undefined && value !== '') {
+      localStorage.setItem(key, value);
+    }
+  };
   // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,10 +33,15 @@ const UserLogin = () => {
       const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/user/login`, formData);
       setSuccess('Login successful!');
       setError('');
-      localStorage.setItem('user_id', response.data.user_id);
-      localStorage.setItem('user_token', response.data.token);
-      localStorage.setItem('user_email', response.data.user_email);
-      navigate('/dashboard')
+      if (response.data.user._id) safeSetItem('user_id', response.data.user._id);
+      if (response.data.token) safeSetItem('user_token', response.data.token);
+      if (response.data.user.user_email) safeSetItem('user_email', response.data.user.user_email);
+      if (response.data.user.user_phone) safeSetItem('user_phone', response.data.user.user_phone);
+      if (response.data.user.user_city) safeSetItem('user_city', response.data.user.user_city);
+      if (response.data.user.user_state) safeSetItem('user_state', response.data.user.user_state);
+      if (response.data.user.user_zip) safeSetItem('user_zip', response.data.user.user_zip);
+      if (response.data.user.user_country) safeSetItem('user_country', response.data.user.user_country);
+      if (response.data.user.user_fullname) safeSetItem('user_fullname', response.data.user.user_fullname);      navigate('/dashboard')
       console.log(response.data);
     } catch (err) {
       setError('Invalid credentials. Please try again.');

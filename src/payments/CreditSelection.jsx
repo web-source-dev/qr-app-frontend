@@ -6,26 +6,50 @@ const CreditsSelection = () => {
 
   const handleCreditClick = (credits) => {
     createPaymentIntent(credits);
-    setCreditPayment(credits);  // This will set the credit payment amount globally across the app.  // You can use this in your other components where you need to access the credit payment amount.  // For example, in a checkout page, you can display the credit payment amount.  // This can be done in a separate component or in the PaymentContext component.  // This is just a simple example.  // You can also use Redux, MobX, or any other state
+    setCreditPayment(credits); 
     console.log(credits);
   };
 
 
   return (
-    <div className="credits-container">
-      <div className="credit-box" onClick={() => handleCreditClick(100)}>
-        <h3>100 Credits</h3>
-        <p>$100</p>
-      </div>
-      <div className="credit-box" onClick={() => handleCreditClick(200)}>
-        <h3>200 Credits</h3>
-        <p>$200</p>
-      </div>
-      <div className="credit-box" onClick={() => handleCreditClick(300)}>
-        <h3>300 Credits</h3>
-        <p>$300</p>
-      </div>
+  <>
+    <h3> Select Your Plan</h3>
+    <div className="personal-details-form-select">
+    <div className="credit-box-payment-popup" onClick={() => handleCreditClick(100)}>
+      <h3>100 Credits - <span className="text-align-right">$100</span></h3>
+      <ul>
+        <li>Generate up to 100 QR codes</li>
+        <li>Access to basic QR customization options (color, size)</li>
+        <li>Download QR codes in standard quality (PNG, JPG)</li>
+        <li>QR code tracking for basic analytics</li>
+      </ul>
     </div>
+
+    <div className="credit-box-payment-popup" onClick={() => handleCreditClick(200)}>
+      <h3>200 Credits - <span className="text-align-right">$200</span></h3>
+      <ul>
+          <li>Generate up to 250 QR codes</li>
+          <li>Advanced QR customization options (colors, gradients, shape changes)</li>
+          <li>Download QR codes in high quality (PNG, JPG, SVG)</li>
+          <li>QR code tracking with advanced analytics (scans, locations)</li>
+          <li>Priority email support for customization issues</li>
+          <li>QR code bulk generation for large batches</li>
+      </ul>
+    </div>
+
+    <div className="credit-box-payment-popup" onClick={() => handleCreditClick(300)}>
+      <h3>300 Credits - <span className="text-align-right">$300</span></h3>
+      <ul>
+        <li>Generate unlimited QR codes</li>
+        <li>Access to premium QR customization options (logos, frames, QR shapes, animation effects)</li>
+        <li>High-resolution downloads (print-ready PDFs, EPS)</li>
+        <li>Exclusive access to new QR features and beta tools</li>
+        <li>QR code tracking with detailed analytics (conversion rates, scan demographics)</li>
+        <li>24/7 dedicated customer support (chat, email, and phone)</li>
+      </ul>
+    </div>
+  </div>
+  </>
   );
 };
 

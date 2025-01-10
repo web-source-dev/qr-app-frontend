@@ -2,8 +2,6 @@
 import React, { useEffect } from 'react';
 import { Routes, Route,useLocation , useNavigate } from 'react-router-dom';
 import Sidebar from '../../pages/Sidebar';
-import Settings from './Settings/Settings';
-import PlansPayments from './Settings/PlanPayments';
 import AllQrCodeCall from './allcomponentsCall/allqrcodecall/AllQrCodeCall';
 import ImagesQr from '../../allqrcodefiles/Imagesqr/ImagesQr';
 import VideoQr from '../../allqrcodefiles/VideoQr/VideoQr';
@@ -30,6 +28,9 @@ import ProductQr from '../../allqrcodefiles/ProductQr/ProductQr';
 import EventQrForm from '../../allqrcodefiles/EventQr/EventQr';
 import BarcodeGenerator from '../../allqrcodefiles/Barcode/Barcode';
 import AllMyGeneratedHeader from './allcomponentsCall/allgeneratedqrcodescall/myqrCode/allmygeneratedheader';
+import DefualtPage from './Settings/DefualtPage';
+import CreditsSelection from '../../payments/CreditSelection';
+import ManagePayment from '../../payments/ManagePayment';
 
 
 
@@ -37,6 +38,10 @@ const Dashboard = () => {
   const location = useLocation();
 
   useEffect(()=> {
+    const user_id = localStorage.getItem('user_id')
+    if (!user_id) {
+      window.location.href = '/user/login';
+    }
     const notremove = localStorage.getItem('url')
     if (location.pathname + location.search === notremove) {
       console.log('Right path, localStorage retained');
@@ -73,9 +78,9 @@ const Dashboard = () => {
 
           <Route path="generate" element={<AllQrCodeCall />} />
           <Route path="manage" element={<AllMyGeneratedHeader />} />
-          <Route path="settings" element={<Settings />} />
-          <Route path="planspayments" element={<PlansPayments />} />
-
+          <Route path="/" element={<DefualtPage />} />
+          <Route path="payments" element={<CreditsSelection />} />
+          <Route path="managepayment" element={<ManagePayment />} />
 
 
           {/* dynamic */}
